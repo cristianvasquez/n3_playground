@@ -6,25 +6,7 @@ Given an initial state and state transitions, find paths within limits
 
 In the example we go from Brussels to Oostende, with the possibility of buying an icecream. 
 
-```graphviz
-digraph finite_state_machine {
-    rankdir=LR;
-    size="8,5"
-
-    node [shape = circle ]; Brussels
-    node [shape = circle ]; Ghent
-    node [shape = circle ]; Brugge
-    node [shape = circle ]; Oostende
-
-    Brussels -> Ghent [ label = "11" ];
-    Ghent  -> Brugge [ label = "10" ];
-    Brugge  -> Oostende  [ label = "15" ];
-    Ghent  -> Oostende [ label = "3" ];
-    Brussels  -> Oostende [ label = "70" ];
-    Brugge  -> Brugge [ label = "Buy an ice cream" ];
-
-}
-```
+![Image of map of belgium](./images/1.png)
 
 ```sh
 >/opt/eye/bin/eye.sh --nope --n3 gps-plugin.n3 map.n3 state.n3 --query query.n3 
