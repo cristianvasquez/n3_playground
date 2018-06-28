@@ -1,0 +1,1 @@
+/opt/eye/bin/eye.sh --nope --n3 gps-plugin.n3 map.n3 state.n3 --query query.n3 

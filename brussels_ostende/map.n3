@@ -1,0 +1,117 @@
+PREFIX math: <http://www.w3.org/2000/10/swap/math#>
+PREFIX gps: <http://josd.github.io/fluid/gps/gps-schema#>
+PREFIX : <http://josd.github.io/fluid#>
+PREFIX ex: <http://example.org#>
+
+# State transitions
+#
+# Each description contains the triples to be retracted, and
+# the ones to be added, in adition to the following values:
+#
+#		?Duration 
+#		?Cost 
+#		?SuccessRate 
+#		?Comfort 
+# 
+# Respectively
+
+# map of Belgium
+
+:drive_Brussels_Oostende ex:label "Drive from Brussels to Oostende" .
+{
+    :map-BE gps:description (
+        {?S :location :Brussels} 
+        true 
+        {?S :location :Oostende} 
+        :drive_Brussels_Oostende 
+        70.0 
+        0.005 
+        0.98 
+        1.0)
+} <= true.
+
+:buy_an_icecream ex:label "Buy an Ice cream" .
+{
+    :map-BE gps:description (
+        {
+            ?S :location :Brugge ;
+                ex:wantsIcecream true .
+        } 
+        true 
+        {
+            ?S :location :Brugge ;
+                ex:wantsIcecream false .
+        } 
+        :buy_an_icecream 
+        70.0 
+        0.005 
+        0.98 
+        1.0)
+} <= true.
+
+:drive_Ghent_Brugge ex:label "Drive from Ghent to Brugge" .
+{
+    :map-BE gps:description (
+        {?S :location :Ghent} 
+        true 
+        {?S :location :Brugge} 
+        :drive_Ghent_Brugge 
+        10.0 
+        0.005 
+        0.98 
+        1.0)
+} <= true.
+
+:drive_Brussels_Ghent ex:label "Drive from Brussels to Ghent" .
+{
+    :map-BE gps:description (
+        {?S :location :Brussels} 
+        true 
+        {?S :location :Ghent} 
+        :drive_Brussels_Ghent 
+        11.0 
+        0.005 
+        0.98 
+        1.0)
+} <= true.
+
+
+:drive_Ghent_Oostende ex:label "Drive from Ghent to Oostende" .
+{
+    :map-BE gps:description (
+        {?S :location :Ghent} 
+        true 
+        {?S :location :Oostende} 
+        :drive_Ghent_Oostende 
+        3.0 
+        0.005 
+        0.98 
+        1.0)
+} <= true.
+
+
+:drive_Brugge_Oostende ex:label "Drive from Brugge to Oostende" .
+{
+    :map-BE gps:description (
+        {?S :location :Brugge} 
+        true 
+        {?S :location :Oostende} 
+        :drive_Brugge_Oostende 
+        15.0 
+        0.005 
+        0.98 
+        1.0)
+} <= true.
+
+:drive_Ghent_Brugge ex:label "Drive from Ghent to Brugge" .
+{
+    :map-BE gps:description (
+        {?S :location :Gent} 
+        true 
+        {?S :location :Brugge} 
+        :drive_Ghent_Brugge 
+        10.0 
+        0.005 
+        0.96 
+        0.99)
+} <= true.
