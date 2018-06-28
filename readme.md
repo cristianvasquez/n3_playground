@@ -45,7 +45,7 @@ reasoning 1 [msec cputime] 1 [msec walltime]
 
 ## Credit
 
-[Fluid](http://josd.github.io/fluid), by Jos
+[Fluid](https://github.com/josd/fluid), by Jos
 
 ------------------------------
 Goal driven Parallel Sequences
