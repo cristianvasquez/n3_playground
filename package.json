@@ -1,0 +1,23 @@
+{
+  "name": "playground-demo",
+  "version": "0.0.1",
+  "description": "PDDL to N3.",
+  "author": {
+    "name": "Cristian Vasquez"
+  },
+  "engines": {
+    "node": "*",
+    "npm": "*"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "http://opensource.org/licenses/MIT"
+    }
+  ],
+  "dependencies": {
+    "handlebars": "^4.0.12",
+    "handlebars-helpers": "^0.10.0",
+    "strips": "0.0.10"
+  }
+}

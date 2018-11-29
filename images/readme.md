@@ -1,4 +1,4 @@
-## Brussels to Oostende
+# Brussels to Oostende
 
 ```graphviz
 digraph finite_state_machine {

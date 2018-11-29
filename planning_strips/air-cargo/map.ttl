@@ -1,0 +1,74 @@
+PREFIX math: <http://www.w3.org/2000/10/swap/math#>
+PREFIX gps: <http://josd.github.io/fluid/gps/gps-schema#>
+PREFIX : <http://josd.github.io/fluid#>
+PREFIX ex: <http://example.org#>
+
+:this ex:domain "air-cargo" ;
+ex:requirement "strips" .
+
+# Description of 'LOAD'
+{ :this gps:description ( {
+# to add
+    ?c :In ?p .
+} true {
+# to remove
+    ?c :At ?a .
+}
+:LOAD
+    1 # Duration
+    1 # Cost
+    1 # SuccessRate
+    1 # Happiness
+)} <= {
+# the preconditions
+    ?c :At ?a .
+    ?p :At ?a .
+    ?c a :Cargo .
+    ?p a :Plane .
+    ?a a :Airport .
+}.
+
+
+# Description of 'UNLOAD'
+{ :this gps:description ( {
+# to add
+    ?c :At ?a .
+} true {
+# to remove
+    ?c :In ?p .
+}
+:UNLOAD
+    1 # Duration
+    1 # Cost
+    1 # SuccessRate
+    1 # Happiness
+)} <= {
+# the preconditions
+    ?c :In ?p .
+    ?p :At ?a .
+    ?c a :Cargo .
+    ?p a :Plane .
+    ?a a :Airport .
+}.
+
+
+# Description of 'FLY'
+{ :this gps:description ( {
+# to add
+    ?p :At ?to .
+} true {
+# to remove
+    ?p :At ?from .
+}
+:FLY
+    1 # Duration
+    1 # Cost
+    1 # SuccessRate
+    1 # Happiness
+)} <= {
+# the preconditions
+    ?p :At ?from .
+    ?p a :Plane .
+    ?from a :Airport .
+    ?to a :Airport .
+}.
