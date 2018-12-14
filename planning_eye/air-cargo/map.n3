@@ -37,6 +37,7 @@ ex:requirement "strips" .
 # to remove
     ?c :In ?p .
 }
+
 :UNLOAD
     1 # Duration
     1 # Cost

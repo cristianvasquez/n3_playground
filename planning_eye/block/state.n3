@@ -1,0 +1,15 @@
+PREFIX math: <http://www.w3.org/2000/10/swap/math#>
+PREFIX gps: <http://josd.github.io/fluid/gps/gps-schema#>
+PREFIX : <http://josd.github.io/fluid#>
+PREFIX ex: <http://example.org#>
+
+# initial state
+
+:a a :block .
+:b a :block .
+
+:x a :table .
+:y a :table .
+
+:a :on :x .
+:b :on :x .

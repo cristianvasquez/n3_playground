@@ -1,0 +1,19 @@
+PREFIX math: <http://www.w3.org/2000/10/swap/math#>
+PREFIX gps: <http://josd.github.io/fluid/gps/gps-schema#>
+PREFIX : <http://josd.github.io/fluid#>
+PREFIX ex: <http://example.org#>
+
+# Description of 'move'
+{ :this gps:description ( {
+    ?block :on ?t2 .
+        } true {
+    ?block :on ?t1 .
+}
+:move 1 1 1 1
+)} <= {
+# the preconditions
+        ?t1 a :table .
+        ?t2 a :table .
+        ?block a :block .
+        ?block :on ?t1 .
+}.

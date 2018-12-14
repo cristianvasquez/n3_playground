@@ -1,0 +1,18 @@
+PREFIX math: <http://www.w3.org/2000/10/swap/math#>
+PREFIX gps: <http://josd.github.io/fluid/gps/gps-schema#>
+PREFIX : <http://josd.github.io/fluid#>
+PREFIX ex: <http://example.org#>
+
+:this ex:domain "air-cargo" ;
+
+# initial state
+
+:SFO a :Airport .
+:JFK a :Airport .
+
+:C1 a :Cargo, :At :SFO .
+:C2 a :Cargo, :At :JFK .
+
+:P1 a :Plane, :At :SFO .
+:P2 a :Plane, :At :JFK .
+

@@ -1,0 +1,31 @@
+PREFIX math: <http://www.w3.org/2000/10/swap/math#>
+PREFIX gps: <http://josd.github.io/fluid/gps/gps-schema#>
+PREFIX : <http://josd.github.io/fluid#>
+PREFIX ex: <http://example.org#>
+
+{
+	?SCOPE gps:findpath (
+			{
+                :a :on :y .
+			}
+			?path
+			?duration
+			?cost
+			?successRate
+			?happiness (
+			    1000    # maximum duration
+			    1000    # maximum cost
+			    0.1       # minimum success Rate
+			    0.1       # minimum happiness
+			    3      # max stage count
+			)
+		).
+} => {
+	?SUBJECT ex:hasPath (
+	                        ?path
+	                        ?duration
+	                        ?cost
+	                        ?happiness
+	                        ?successRate
+	                    ) .
+}.
