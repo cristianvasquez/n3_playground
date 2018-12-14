@@ -17,3 +17,30 @@ PREFIX ex: <http://example.org#>
         ?block a :block .
         ?block :on ?t1 .
 }.
+
+
+
+
+PREFIX math: <http://www.w3.org/2000/10/swap/math#>
+PREFIX gps: <http://josd.github.io/fluid/gps/gps-schema#>
+PREFIX : <http://josd.github.io/fluid#>
+PREFIX ex: <http://example.org#>
+
+# Description of 'move'
+{ :this gps:description ( {
+# to add
+    ?b :on ?t2 .
+} true {
+# to remove
+    ?b :on ?t1 .
+}
+:move
+    1 # Duration
+    1 # Cost
+    1 # SuccessRate
+    1 # Happiness
+)} <= {
+    ?b a :block .    ?t1 a :table .    ?t2 a :table .    ?b :on ?t1 .
+# NOT
+    _:x :findall (1 { ?b :on ?t2 . }.).
+}.
