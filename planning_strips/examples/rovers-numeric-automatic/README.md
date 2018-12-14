@@ -2,7 +2,9 @@
 
 ## Domain Description
 
-Inspired by planetary rovers problems, this domain requires that a collection of rovers navigate a planet surface, finding samples and communicating them back to a lander.
+Inspired by planetary rovers problems, 
+this domain requires that a collection of rovers navigate a planet surface, 
+finding samples and communicating them back to a lander.
 
 ## Authors
 

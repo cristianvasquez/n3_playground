@@ -6,7 +6,7 @@ PREFIX ex: <http://example.org#>
 # State transitions
 #
 # Each description contains the triples to be retracted, and
-# the ones to be added, in adition to the following values:
+# the ones to be added, in addition to the following values:
 #
 #		?Duration 
 #		?Cost 
@@ -17,20 +17,21 @@ PREFIX ex: <http://example.org#>
 
 # map of Belgium
 
-:drive_Brussels_Oostende ex:label "Drive from Brussels to Oostende" .
+# Drive from Brussels to Oostende
 {
     :map-BE gps:description (
         {?S :location :Brussels} 
         true 
         {?S :location :Oostende} 
         :drive_Brussels_Oostende 
-        70.0 
-        0.005 
-        0.98 
-        1.0)
+            70.0    # Duration
+            0.005   # Cost
+            0.98    # SuccessRate
+            1.0     # Happiness
+        )
 } <= true.
 
-:buy_an_icecream ex:label "Buy an Ice cream" .
+# Buy an Ice cream
 {
     :map-BE gps:description (
         {
@@ -43,75 +44,83 @@ PREFIX ex: <http://example.org#>
                 ex:wantsIcecream false .
         } 
         :buy_an_icecream 
-        70.0 
-        0.005 
-        0.98 
-        1.0)
-} <= true.
+            70.0    # Duration
+            0.005   # Cost
+            0.98    # SuccessRate
+            10.0    # Happiness
+        )
+} <= {
+    ?S ex:wantsIcecream true .
+} .
 
-:drive_Ghent_Brugge ex:label "Drive from Ghent to Brugge" .
+# Drive from Ghent to Brugge
 {
     :map-BE gps:description (
         {?S :location :Ghent} 
         true 
         {?S :location :Brugge} 
         :drive_Ghent_Brugge 
-        10.0 
-        0.005 
-        0.98 
-        1.0)
+            10.0    # Duration
+            0.005   # Cost
+            0.98    # SuccessRate
+            1.0     # Happiness
+        )
 } <= true.
 
-:drive_Brussels_Ghent ex:label "Drive from Brussels to Ghent" .
+# Drive from Brussels to Ghent
 {
     :map-BE gps:description (
         {?S :location :Brussels} 
         true 
         {?S :location :Ghent} 
         :drive_Brussels_Ghent 
-        11.0 
-        0.005 
-        0.98 
-        1.0)
+            11.0    # Duration
+            0.005   # Cost
+            0.98    # SuccessRate
+            1.0     # Happiness
+        )
 } <= true.
 
 
-:drive_Ghent_Oostende ex:label "Drive from Ghent to Oostende" .
+# Drive from Ghent to Oostende
 {
     :map-BE gps:description (
         {?S :location :Ghent} 
         true 
         {?S :location :Oostende} 
         :drive_Ghent_Oostende 
-        3.0 
-        0.005 
-        0.98 
-        1.0)
+            3.0     # Duration
+            0.005   # Cost
+            0.98    # SuccessRate
+            1.0     # Happiness
+        )
 } <= true.
 
 
-:drive_Brugge_Oostende ex:label "Drive from Brugge to Oostende" .
+# Drive from Brugge to Oostende
 {
     :map-BE gps:description (
         {?S :location :Brugge} 
         true 
         {?S :location :Oostende} 
         :drive_Brugge_Oostende 
-        15.0 
-        0.005 
-        0.98 
-        1.0)
+            15.0    # Duration
+            0.005   # Cost
+            0.98    # SuccessRate
+            1.0     # Happiness
+        )
 } <= true.
 
-:drive_Ghent_Brugge ex:label "Drive from Ghent to Brugge" .
+# Drive from Ghent to Brugge
 {
     :map-BE gps:description (
         {?S :location :Gent} 
         true 
         {?S :location :Brugge} 
         :drive_Ghent_Brugge 
-        10.0 
-        0.005 
-        0.96 
-        0.99)
+            10.0    # Duration
+            0.005   # Cost
+            0.96    # SuccessRate
+            0.99    # Happiness
+        )
 } <= true.
