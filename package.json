@@ -19,6 +19,7 @@
     "test": "jest"
   },
   "dependencies": {
+
     "fastpriorityqueue": "^0.2.4",
     "handlebars": "latest",
     "handlebars-helpers": "^0.10.0",
@@ -26,6 +27,7 @@
     "strips": "0.0.10"
   },
   "devDependencies": {
-    "jest": "^19.0.2"
+    "jest": "^19.0.2",
+    "@types/jest": "^23.3.10"
   }
 }

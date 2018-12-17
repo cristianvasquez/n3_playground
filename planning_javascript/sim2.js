@@ -1,4 +1,6 @@
-export const initialState = {
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.initialState = {
     player: {
         weapon_equipped: false,
         bullets: 0,
@@ -9,80 +11,79 @@ export const initialState = {
         alive: true
     }
 };
-
-export const actions = {
+exports.actions = {
     equipWeapon: {
-        condition: s => !s.player.weapon_equipped,
-        effect: s => {
+        condition: function (s) { return !s.player.weapon_equipped; },
+        effect: function (s) {
             s.player.weapon_equipped = true;
             return s;
         },
-        cost: s => 2
+        cost: function (s) { return 2; }
     },
     reload: {
-        condition: s => s.player.weapon_equipped && s.player.clips > 0,
-        effect: s => {
+        condition: function (s) { return s.player.weapon_equipped && s.player.clips > 0; },
+        effect: function (s) {
             s.player.bullets += 6;
             return s;
         },
-        cost: s => 2
+        cost: function (s) { return 2; }
     },
     fire: {
-        condition: s =>
-            s.enemy.visible === true &&
-            s.player.weapon_equipped &&
-            s.player.bullets > 0,
-        effect: s => {
+        condition: function (s) {
+            return s.enemy.visible === true &&
+                s.player.weapon_equipped &&
+                s.player.bullets > 0;
+        },
+        effect: function (s) {
             s.player.bullets--;
             s.enemy.alive = false;
             return s;
         },
-        cost: s => 2
+        cost: function (s) { return 2; }
     },
     useTurret: {
-        condition: s => s.enemy.visible,
-        effect: s => {
+        condition: function (s) { return s.enemy.visible; },
+        effect: function (s) {
             s.enemy.alive = false;
             return s;
         },
-        cost: s => 10
+        cost: function (s) { return 10; }
     },
     knifeAttack: {
-        condition: s => s.enemy.visible,
-        effect: s => {
+        condition: function (s) { return s.enemy.visible; },
+        effect: function (s) {
             s.enemy.alive = false;
             return s;
         },
-        cost: s => 12
+        cost: function (s) { return 12; }
     },
     scout: {
-        condition: s => !s.enemy.visible,
-        effect: s => {
+        condition: function (s) { return !s.enemy.visible; },
+        effect: function (s) {
             s.enemy.visible = true;
             return s;
         },
-        cost: s => 1
+        cost: function (s) { return 1; }
     },
     hide: {
-        condition: s => true,
-        effect: s => {
+        condition: function (s) { return true; },
+        effect: function (s) {
             s.enemy.visible = false;
             return s;
         },
-        cost: s => 1
+        cost: function (s) { return 1; }
     }
 };
-
-export const goals = {
+exports.goals = {
     killEnemy: {
         label: "Kill Enemy",
-        validate: (prevState, nextState) => {
+        validate: function (prevState, nextState) {
             return nextState.enemy.alive === false;
         }
     },
     hide: {
         label: "Hide",
-        validate: (prev, next) => {
+        validate: function (prev, next) {
             return next.enemy.visible === false;
         }
     }

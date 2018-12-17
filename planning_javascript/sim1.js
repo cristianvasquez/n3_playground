@@ -1,42 +1,42 @@
-export const initialState = {
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.initialState = {
     axe_available: true,
     player: {
         axe_equipped: false,
         wood: 0
     }
 };
-
-export const actions = {
+exports.actions = {
     chopWood: {
-        condition: s => s.player.axe_equipped,
-        effect: s => {
+        condition: function (s) { return s.player.axe_equipped; },
+        effect: function (s) {
             s.player.wood++;
             return s;
         },
-        cost: s => 2
+        cost: function (s) { return 2; }
     },
     getAxe: {
-        condition: s => !s.player.axe_equipped && s.axe_available,
-        effect: s => {
+        condition: function (s) { return !s.player.axe_equipped && s.axe_available; },
+        effect: function (s) {
             s.player.axe_equipped = true;
             return s;
         },
-        cost: s => 2
+        cost: function (s) { return 2; }
     },
     gatherWood: {
-        condition: s => true,
-        effect: s => {
+        condition: function (s) { return true; },
+        effect: function (s) {
             s.player.wood++;
             return s;
         },
-        cost: s => 5
+        cost: function (s) { return 5; }
     }
 };
-
-export const goals = {
+exports.goals = {
     collectWood: {
         label: "Collect Wood",
-        validate: (prevState, nextState) => {
+        validate: function (prevState, nextState) {
             return nextState.player.wood > prevState.player.wood;
         }
     }
