@@ -3,6 +3,11 @@ var helpers = require('handlebars-helpers')({
     handlebars: Handlebars
 });
 
+
+// var helpers = require('handlebars-helpers')({
+//     handlebars: Handlebars
+// });
+
 const getTransitionMap = Handlebars.compile(
 `
 PREFIX math: <http://www.w3.org/2000/10/swap/math#>
@@ -25,9 +30,17 @@ PREFIX ex: <http://example.org#>
     1 # SuccessRate
     1 # Happiness
 )} <= {
-{{#precondition}}{{#is operation 'not'}}
-# negation (not implemented){{/is}}{{#is operation 'and'}}# the preconditions{{/is}}
+{{#precondition}}
+{{#is operation 'not'}}
+
+# NOT
+_:x e:findall (1 {
+{{/is}}
     {{#equalsLength parameters 0}}#ERROR 0{{/equalsLength}}{{#equalsLength parameters 1}}?{{itemAt parameters 0}} a :{{action}} .{{/equalsLength}}{{#equalsLength parameters 2}}?{{itemAt parameters 0}} :{{action}} ?{{itemAt parameters 1}} .{{/equalsLength}}{{#equalsLength parameters 3}}#ERROR 3{{/equalsLength}}{{/precondition}}
+{{#is operation 'not'}}
+} ()) . 
+{{/is}}
+
 }.
 
 {{/actions}}
@@ -103,4 +116,4 @@ module.exports = {
     'getTransitionMap':getTransitionMap,
     'getState':getState,
     'getQuery':getQuery
-}
+};

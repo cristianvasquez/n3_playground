@@ -15,9 +15,17 @@
       "url": "http://opensource.org/licenses/MIT"
     }
   ],
+  "scripts": {
+    "test": "jest"
+  },
   "dependencies": {
-    "handlebars": "^4.0.12",
+    "fastpriorityqueue": "^0.2.4",
+    "handlebars": "latest",
     "handlebars-helpers": "^0.10.0",
+    "lodash": "^4.17.4",
     "strips": "0.0.10"
+  },
+  "devDependencies": {
+    "jest": "^19.0.2"
   }
 }
